@@ -1,0 +1,27 @@
+﻿@model List<GoogleChatAPI.Models.ChatMessage>
+
+@{
+    ViewBag.Title = "Повідомлення з чату";
+}
+
+<h2>Повідомлення з чату</h2>
+
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Відправник</th>
+            <th>Повідомлення</th>
+            <th>Час</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var message in Model)
+        {
+            <tr>
+                <td>@message.Sender</td>
+                <td>@message.Text</td>
+                <td>@message.Timestamp.ToString("g")</td>
+            </tr>
+        }
+    </tbody>
+</table>
