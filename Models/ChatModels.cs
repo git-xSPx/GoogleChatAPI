@@ -19,6 +19,7 @@ namespace GoogleChatAPI.Models
     public class MessageContent
     {
         public SenderInfo Sender { get; set; }
+        public SpaceInfo Space { get; set; }
         public string Text { get; set; }
     }
 
@@ -26,5 +27,10 @@ namespace GoogleChatAPI.Models
     {
         public string DisplayName { get; set; }
         public string Email { get; set; }
+    }
+    public class SpaceInfo
+    {
+        public string Name { get; set; }
+        public string Type { get; set; }
     }
 }
