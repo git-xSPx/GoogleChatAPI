@@ -1,0 +1,1 @@
+web: cd bin/publish && dotnet GoogleChatAPI.dll --urls=http://*:$PORT
