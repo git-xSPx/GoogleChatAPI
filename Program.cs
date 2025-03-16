@@ -1,4 +1,4 @@
-using DotNetEnv;
+п»їusing DotNetEnv;
 
 Env.Load();
 
@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 //.AddNewtonsoftJson();
 
-// Додати налаштування із змінних оточення
+// Р”РѕРґР°С‚Рё РЅР°Р»Р°С€С‚СѓРІР°РЅРЅСЏ С–Р· Р·РјС–РЅРЅРёС… РѕС‚РѕС‡РµРЅРЅСЏ
 builder.Configuration.AddEnvironmentVariables();
 
 var app = builder.Build();
