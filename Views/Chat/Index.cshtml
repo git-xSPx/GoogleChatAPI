@@ -6,6 +6,22 @@
 
 <h2>Повідомлення з чату</h2>
 
+@* Відображення повідомлень про успіх, якщо є *@
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+@* Відображення помилок та попереджень, якщо є *@
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+}
+
 <table border="1" cellpadding="5">
     <thead>
         <tr>
@@ -25,3 +41,19 @@
         }
     </tbody>
 </table>
+
+<hr />
+
+<h3>Відправити відповідь користувачеві</h3>
+
+@* Форма для відправлення відповіді *@
+@using (Html.BeginForm("SendResponse", "Chat", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="responseText">Текст відповіді:</label>
+        <textarea id="responseText" name="responseText" class="form-control" rows="4"></textarea>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Надіслати" class="btn btn-primary" />
+    </div>
+}

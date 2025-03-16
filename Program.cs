@@ -1,8 +1,15 @@
+using DotNetEnv;
+
+Env.Load();
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-    //.AddNewtonsoftJson();
+//.AddNewtonsoftJson();
+
+// Додати налаштування із змінних оточення
+builder.Configuration.AddEnvironmentVariables();
 
 var app = builder.Build();
 
